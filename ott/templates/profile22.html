@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profiles</title>
+</head>
+
+<body>
+    <h1>User Profiles</h1>
+    <p>Welcome, {{ user.username }}!</p>
+
+    <h2>Your Profiles:</h2>
+    <ul>
+        {% for profile in profiles %}
+        <li><a href="{% url 'profile_detail' profile.id %}">{{ profile.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'logout' %}">Logout</a>
+</body>
+
+</html>
